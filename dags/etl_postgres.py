@@ -64,7 +64,7 @@ def load_data():
     transformed = [(r[1], r[2], r[2]**2) for r in rows]
     
     # Cargar en tabla destino
-    cur.execute("TRUNCATE TABLE target_data;")
+    #cur.execute("TRUNCATE TABLE target_data;")
     cur.executemany(
         "INSERT INTO target_data (name, value, value_squared) VALUES (%s,%s,%s)",
         transformed
