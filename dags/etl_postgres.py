@@ -3,6 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime
 import psycopg2
 
+
 def load_data(**context):
     hook = PostgresHook(postgres_conn_id="my_postgres")
     data = context['ti'].xcom_pull(task_ids='transform_data')
